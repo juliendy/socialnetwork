@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: mistyrose;
+    margin: 0;
+    font-family: "Merriweather", serif;
+}
+header {
+    background-color: #e1f1ef;
+}
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-link {
+    margin: 4px;
+    color: #5d6b6d;
+    text-decoration: none;
+}
+
+.header-link:hover {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.container {
+    position: relative;
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    font-family: "Satisfy", cursive;
+    font-size: 70px;
+    margin: 0;
+    color: #331200;
+}
+
+button {
+    border: 2px solid transparent;
+    background-color: (218, 223, 225);
+    border-radius: 2px;
+}
+
+button:hover {
+    border: 2px solid rgb(108, 122, 137, 0.8);
+}
+
+.modal-wrapper {
+    position: relative;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 24px;
+    padding: 30px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome {
+    max-width: 70%;
+    margin: 42px auto;
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+label {
+    display: block;
+}
+input {
+    display: block;
+    width: 100%;
+    padding: 4px;
+    font-size: 16px;
+}
+
+.form-field {
+    margin-top: 8px;
+}
+.form-label {
+    font-weight: bold;
+}
+
+.form-error {
+    color: red;
+}
+.form-success {
+    color: green;
+    font-style: italic;
+}
+
+img {
+    object-fit: cover;
+    border-radius: 4px;
+}
+.profile-pic {
+    width: 300px;
+    height: 300px;
+
+    padding: 10px;
+    background-color: rgba(218, 223, 225, 0.8);
+    border: none;
+    border-radius: 50%;
+}
+
+header .profile-pic {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background: none;
+    border-radius: 50%;
+}
+/* header .profile-pic:hover {
+} */
+
+.profile {
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+input[type="file"] {
+    color: rgba(0, 0, 0, 0);
+}
+
+input::file-selector-button {
+    font-family: "Ibarra Real Nova", serif;
+    font-size: 16px;
+    color: #314e52;
+    display: inline-block;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5%;
+    margin: 20px 0;
+}
+.find-people {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.recent-users {
+    max-width: 400px;
+    padding: 16px;
+    border: 3px solid rgba(218, 223, 225, 0.8);
+    border-radius: 4px;
+    background-color: #f7fcfb;
+}
+.users-list-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+.users-list img {
+    width: 100px;
+    height: 100px;
+}
+
+.users-list a {
+    color: #5d6b6d;
+    text-decoration: none;
+}
+.users-list a:hover {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.search-users {
+    flex: 1;
+}
+.search-users input {
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.search-pic {
+    border-radius: 5px;
+}
+
+.user-info {
+    margin: 20px;
+}
+
+.friend-button {
+    display: block;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #e1f1ef;
+}
+
+.friendship-requests {
+    background-color: #e1f1ef;
+    margin: 20 0;
+}
+
+.friendship-requests img {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    background: none;
+    margin: 5px 15px;
+}
+
+.friendship-request-item {
+    display: flex;
+    align-items: center;
+}
+
+.friendship-request-item a {
+    display: flex;
+    align-items: center;
+}
+
+.friendship-requests .friend-button {
+    margin: 20px 20px;
+    display: inline-block;
+    background-color: ghostwhite;
+}
+
+/* --------------------------------------------friends page */
+
+.friends-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #e1f1ef;
+    gap: 20px;
+    padding: 40px;
+    margin-bottom: 24px;
+}
+
+.friends-wrapper img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+textarea {
+  width: 60%;
+  height: 150px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
