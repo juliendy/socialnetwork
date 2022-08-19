@@ -277,44 +277,43 @@ input::file-selector-button {
     text-align: center;
     text-decoration: underline;
     text-decoration-color: #331200;
-
-    max-width: 800px;
+    max-width: 80rem;
     margin: auto;
-    margin-bottom: 10px;
-    padding: 5px;
+    margin-bottom: 1rem;
+    padding: .5rem;
 }
 .chat-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    margin-right: 20px;
+    width: 10rem;
+    height: 10rem;
+    border-radius: .5rem;
+    margin-right: 2rem;
 }
 .chat-wrapper {
-    max-width: 1000px;
+    max-width: 100rem;
     margin: auto;
     background-color: #e1f1ef;
-    border-radius: 8px;
+    border-radius: .8rem;
 }
 
 .chat-item {
     display: flex;
-    padding: 20px;
+    padding: 2rem;
 }
 
 .chat-body a {
     text-decoration: none;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .chat-message {
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .timestamp {
     font-style: italic;
 }
 .chat textarea {
-    width: 940px;
+    width: 94rem;
     border: none;
     resize: vertical;
 }
@@ -323,7 +322,7 @@ input::file-selector-button {
     display: flex;
 }
 .chat-comment button {
-    width: 60px;
+    width: 6rem;
 }
 .chat-history {
     max-height: 66vh;
