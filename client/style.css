@@ -24,7 +24,7 @@ header {
 }
 
 .header-link {
-    margin: 1rem;
+    margin: .8rem;
     color: #5d6b6d;
     text-decoration: none;
 
@@ -269,4 +269,63 @@ input::file-selector-button {
     width: 100px;
     height: 100px;
     margin: 10px;
+}
+
+/* --------------------------------------------------------chat */
+
+.chat h1 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #331200;
+
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.chat-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.chat-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    background-color: #e1f1ef;
+    border-radius: 8px;
+}
+
+.chat-item {
+    display: flex;
+    padding: 20px;
+}
+
+.chat-body a {
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.chat-message {
+    font-size: 16px;
+}
+
+.timestamp {
+    font-style: italic;
+}
+.chat textarea {
+    width: 940px;
+    border: none;
+    resize: vertical;
+}
+
+.chat-comment {
+    display: flex;
+}
+.chat-comment button {
+    width: 60px;
+}
+.chat-history {
+    max-height: 66vh;
+    overflow-y: scroll;
 }

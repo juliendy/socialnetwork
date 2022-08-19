@@ -145,12 +145,15 @@ module.exports.getUsers = (limit) => {
         });
 };
 
-module.exports.getRecentUsers = (limit) => {
+module.exports.getRecentUsers = (limit, user_id) => {
     return db
         .query(
-            ` SELECT id, first, last,image_url,bio, email 
-         FROM users ORDER BY id DESC LIMIT $1`,
-            [limit]
+            `SELECT id, first, last,image_url,bio, email 
+        FROM users
+        WHERE id != $2
+        ORDER BY id DESC LIMIT $1`,
+
+            [limit, user_id]
         )
         .then((result) => {
             return result.rows;

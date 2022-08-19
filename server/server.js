@@ -81,7 +81,7 @@ app.get("/api/users", function (req, res) {
     let dbQueryPromise;
 
     if (sort === "recent") {
-        dbQueryPromise = db.getRecentUsers(limit);
+        dbQueryPromise = db.getRecentUsers(limit, req.session.userId);
     } else if (search) {
         // search DB
         dbQueryPromise = db.getUsersByNameQuery(search);
@@ -299,7 +299,7 @@ app.get("/api/friendship-requests/:otherId", (req, res) => {
             console.log(err, "User info couldn't be retrieved.");
 
             // res.status(404).json();
-            res.json({status: undefined});
+            res.json({ status: undefined });
         });
 });
 
