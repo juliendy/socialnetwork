@@ -298,7 +298,8 @@ app.get("/api/friendship-requests/:otherId", (req, res) => {
         .catch((err) => {
             console.log(err, "User info couldn't be retrieved.");
 
-            res.status(404).json();
+            // res.status(404).json();
+            res.json({status: undefined});
         });
 });
 
@@ -327,6 +328,7 @@ app.post("/api/friendship-requests/:otherId", (req, res) => {
         )
         .then((data) => {
             res.json(data);
+            console.log(data);
         })
         .catch((err) => {
             console.log("the friend request couldn't get updated", err);

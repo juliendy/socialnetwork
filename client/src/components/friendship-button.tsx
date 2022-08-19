@@ -56,27 +56,36 @@ export default function (props: FriendshipButtonProps) {
     }, [props.profileId]);
 
     const createFriendshipStatus = () => {
+        console.log("about to update...");
         fetch(`/api/friendship-requests`, {
             method: "post",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
                 recipient_id: props.profileId,
             }),
-        }).then(() => {
-            console.log("updating button")
-            setFriendshipStatus(FriendshipStatus.PENDING);
-        });
+        })
+            .then((response) => response.json())
+            .then(({ status, recipient_id, sender_id}) => {
+                setFriendshipStatus(status);
+                setRecipientId(recipient_id);
+                setSenderId(sender_id);
+            });;
     };
 
     const updateFriendshipStatus = (status: FriendshipStatus) => {
+        console.log("about to update...")
         fetch(`/api/friendship-requests/${props.profileId}`, {
             method: "post",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
         }).then(() => {
+            console.log("updating button");
             setFriendshipStatus(status);
         });
     };
+
+    console.log(user.id);
+    console.log(senderId);
 
     if (friendshipStatus === FriendshipStatus.ACCEPTED) {
         return (
@@ -91,6 +100,7 @@ export default function (props: FriendshipButtonProps) {
         );
     }
     if (friendshipStatus === FriendshipStatus.PENDING && user.id === senderId) {
+        console.log("changing button to cancel");
         return (
             <button
                 className="friend-button"
