@@ -14,18 +14,20 @@ body {
 }
 
 header {
-    background-color: #e1f1ef;
+    background: salmon;
 }
 
 .header-wrapper {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .header-link {
     margin: 1rem;
     color: #5d6b6d;
     text-decoration: none;
+
 }
 
 .header-link:hover {

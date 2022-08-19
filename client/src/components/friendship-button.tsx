@@ -32,6 +32,7 @@ export default function (props: FriendshipButtonProps) {
             fetch(`/api/friendship-requests/${props.profileId}`)
                 .then((res) => {
                     if (res.status !== 200) {
+                        console.log(res.status);
                         throw new Error(
                             "Sorry, we couldn't find the friendship status."
                         );
@@ -62,6 +63,7 @@ export default function (props: FriendshipButtonProps) {
                 recipient_id: props.profileId,
             }),
         }).then(() => {
+            console.log("updating button")
             setFriendshipStatus(FriendshipStatus.PENDING);
         });
     };
