@@ -35,8 +35,11 @@ const Account = () => {
                                     Friends
                                 </Link>
                                 <Link className="header-link" to="/chat">
-                                    Klat-klatsch
+                                    Ki-Ki
                                 </Link>
+                                <a className="header-link" href="/log-out">
+                                    Logout
+                                </a>
                             </div>
                             {/* for profile pic we can't use the general user, aka the person logged in, because we are also showing other people's pictures */}
                             <ProfilePic

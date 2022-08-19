@@ -365,6 +365,12 @@ app.get("/api/users/me/friends", (req, res) => {
         });
 });
 
+app.get("/log-out", (req, res) => {
+    req.session = null;
+    return res.redirect("/login");
+});
+
+
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "..", "client", "index.html"));
 });

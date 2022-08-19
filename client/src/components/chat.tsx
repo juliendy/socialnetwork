@@ -122,7 +122,7 @@ export default function () {
 
     return (
         <div className="chat">
-            <h1>Klatsch</h1>
+            <h1>Ki-Ki with other users!</h1>
             <div className="chat-wrapper">
                 <div className="chat-history" ref={chatHistoryRef}>
                     {messages.map((message) => {
