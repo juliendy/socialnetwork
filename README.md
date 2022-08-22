@@ -1,4 +1,4 @@
-# socialnetwork
+# Social Network - MystiqueRose
 Social media project during intensive coding course.
 
 To start:
