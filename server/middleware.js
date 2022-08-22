@@ -1,9 +1,9 @@
 const multer = require("multer");
 const path = require("path");
 const uidSafe = require("uid-safe");
-//  different ways to work with multer, we'll use this one, storing on a disk
+// different ways to work with multer, we'll use this one, storing on a disk
 // tell multer where to store the file and how to name it, so we don't want run into issues when users  the
-//  upload files with same name
+// upload files with same name
 // we can use UID(unique identifier)
 const storage = multer.diskStorage({
     // destination as a function or , if it's always the same place- as a string

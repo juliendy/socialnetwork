@@ -42,7 +42,7 @@ export default function () {
     }, []);
     return (
         <div>
-            <h3>See who would like to be your friends</h3>
+            <h3>Sister-Requests: </h3>
             <div className="friends-wrapper">
                 {requests.map((request) => {
                     return (
@@ -65,7 +65,7 @@ export default function () {
                 })}
             </div>
 
-            <h3>Your friends</h3>
+            <h3>The Sisterhood: </h3>
             <div className="friends-wrapper">
                 {friends.map((friend) => {
                     return (

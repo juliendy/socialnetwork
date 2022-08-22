@@ -38,7 +38,7 @@ const Uploader = (props: UploaderProps) => {
     return (
         <div className="modal">
             <div className="modal-wrapper">
-                <h3>Want to change your image?</h3>
+                <h3>Do you want to change your image?</h3>
                 <form className="form">
                     <input type="file" onChange={uploadFile} />
                 </form>

@@ -57,7 +57,7 @@ export default function (props: FrProps) {
     }
     return (
         <div>
-            <h3> Friendship Requests</h3>
+            <h3>Pending requests: </h3>
             <div className="friendship-requests">
                 {friendshipRequests.map((request) => {
                     return (
@@ -88,7 +88,7 @@ export default function (props: FrProps) {
                                     )
                                 }
                             >
-                                Accept
+                                Yeah, go on
                             </button>
 
                             <button
@@ -100,7 +100,7 @@ export default function (props: FrProps) {
                                     )
                                 }
                             >
-                                Decline
+                                Nu-uh
                             </button>
                         </div>
                     );

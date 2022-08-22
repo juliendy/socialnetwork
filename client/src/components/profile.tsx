@@ -12,11 +12,11 @@ export default function () {
     return (
         <>
             <div className="profile">
+                <p id="greeting-user">Glad to have you back, {user.first}! 🎉</p>
                 <ProfilePic user={user} />
 
                 <BioEditor />
             </div>
-            <p>Hello {user.first}! Today's good day to be you!</p>
             <div>
                 <FriendshipRequests />
             </div>

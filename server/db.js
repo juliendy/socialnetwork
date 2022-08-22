@@ -166,8 +166,10 @@ module.exports.getUsersByNameQuery = (val) => {
             `SELECT id,first,last,image_url,bio, email
          FROM users 
          WHERE first ILIKE $1 
-         OR last ILIKE $1 `,
+         OR last ILIKE $1`,
             [val + "%"]
+
+            // could add to find the search query inside the words "%" + val + "%"
         )
         .then((result) => {
             return result.rows;
@@ -284,7 +286,7 @@ module.exports.getChatMessages = () => {
         FROM chat_messages
         JOIN users
         ON user_id= users.id
-        LIMIT 10`
+        LIMIT 20`
         )
         .then((result) => {
             return result.rows;

@@ -14,7 +14,7 @@ interface FormFieldProps {
 const FormField = (props: FormFieldProps) => {
     return (
         <div className="form-field">
-            {/* htmlFor has to be pointing at an id */}
+            {/* htmlFor has to be pointing to an id */}
             <label className="form-label" htmlFor={props.id}>
                 {props.label}
             </label>

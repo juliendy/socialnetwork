@@ -21,8 +21,8 @@ const Account = () => {
                 <header>
                     <div className="container">
                         <div className="header-wrapper">
-                            <h1 className="logo">The social media</h1>
-                            <div>
+                            <h1 className="logo">MystiqueRose</h1>
+                            <div className="nav-bar">
                                 <Link className="header-link" to="/">
                                     Home
                                 </Link>
@@ -32,7 +32,7 @@ const Account = () => {
                                 </Link>
 
                                 <Link className="header-link" to="/friends">
-                                    Friends
+                                    Sisters
                                 </Link>
                                 <Link className="header-link" to="/chat">
                                     Ki-Ki

@@ -122,7 +122,7 @@ export default function () {
 
     return (
         <div className="chat">
-            <h1>Ki-Ki with other users!</h1>
+            <h2>Ki-Ki with other users!</h2>
             <div className="chat-wrapper">
                 <div className="chat-history" ref={chatHistoryRef}>
                     {messages.map((message) => {
@@ -158,7 +158,7 @@ export default function () {
                         onKeyUp={onKeyPress}
                         rows={2}
                     ></textarea>
-                    <button onClick={sendMessage}> Post</button>
+                    <button className="chat-post"onClick={sendMessage}> Post</button>
                 </div>
             </div>
         </div>

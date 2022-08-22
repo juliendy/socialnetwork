@@ -9,7 +9,7 @@ const Welcome = () => {
         <>
             <div className="welcome">
                 <h1>Welcome to</h1>
-                <h1 className="logo">the Social Media</h1>
+                <h1 className="logo">MystiqueRose</h1>
                 <h3>
                     Where nothing really happens tbh
                 </h3>

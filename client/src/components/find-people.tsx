@@ -9,7 +9,7 @@ export default function () {
     const [searchedUserState, setSearchedUserState] = useState<User[]>([]);
 
     useEffect(() => {
-        fetch("/api/users?sort=recent&limit=3")
+        fetch("/api/users?sort=recent&limit=6")
             .then((res) => {
                 if (res.status !== 200) {
                     throw new Error("Sorry, we couldn't finde the users.");
@@ -56,10 +56,9 @@ export default function () {
     return (
         <div className="find-people">
             <div className="recent-users">
-                <h1>New Profiles!</h1>
+                <h1>Recent queens</h1>
                 <p>
-                    Checkout some of our newest memebers and give them a warm
-                    welcome!
+                    Checkout new queens and start ki-ki-ing!
                 </p>
                 <div className="users-list">
                     {recentUserState.map((user) => {
@@ -83,7 +82,7 @@ export default function () {
                 </div>
             </div>
             <div className="search-users">
-                <h1>Find members</h1>
+                <h1>Queen-search: </h1>
 
                 <input
                     type="text"

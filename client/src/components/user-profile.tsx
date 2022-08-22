@@ -47,10 +47,10 @@ export default function () {
                     <FriendshipButton profileId={id} />
                 </div>
                 <div className="user-info">
-                    <h1>
+                    <h3>
                         {userState.first} {userState.last}
-                    </h1>
-                    <h3>{userState.bio}</h3>
+                    </h3>
+                    <h4>{userState.bio}</h4>
                 </div>
             </div>
         </>

@@ -1,40 +1,202 @@
 :root {
-  font-size: 62.5%;
+    --clr-accent-500: hsl(12, 60%, 45%);
+    --clr-accent-400: hsl(12, 88%, 59%);
+    --clr-accent-300: hsl(12, 88%, 75%);
+    --clr-accent-100: hsl(13, 100%, 96%);
+
+    --clr-primary-400: hsl(228, 39%, 23%);
+
+    --clr-neutral-900: hsl(232, 12%, 13%);
+    --clr-neutral-200: hsl(0 0% 97%);
+    --clr-neutral-100: hsl(0 0% 100%);
+
+    --ff-primary: "Oswald", sans-serif;
+
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+
+    --fs-300: 0.8125rem;
+    --fs-400: 0.875rem;
+    --fs-500: 0.9375rem;
+    --fs-600: 1rem;
+    --fs-700: 1.875rem;
+    --fs-800: 2.5rem;
+    --fs-900: 3.5rem;
+
+    --fs-body: var(--fs-200);
+    --fs-primary-heading: var(--fs-800);
+    --fs-secondary-heading: var(--fs-700);
+    --fs-nav: var(--fs-500);
+    --fs-button: var(--fs-300);
+
+    --size-100: 0.25rem;
+    --size-200: 0.5rem;
+    --size-300: 0.75rem;
+    --size-400: 1rem;
+    --size-500: 1.5rem;
+    --size-600: 2rem;
+    --size-700: 3rem;
+    --size-800: 4rem;
+    --size-900: 5rem;
+    font-size: 62.5%;
 }
 
-* {
+@media (min-width: 50em) {
+    :root {
+        --fs-body: var(--fs-700);
+        --fs-primary-heading: var(--fs-900);
+        --fs-secondary-heading: var(--fs-800);
+
+        --fs-nav: var(--fs-300);
+    }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-body {
-    background-color: mistyrose;
+/* Remove default margin */
+* {
     margin: 0;
-    font-family: "Merriweather", serif;
-    font-size: 1.6rem;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background: mistyrose;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* general styling */
+
+body {
+    font-size: var(--fs-body);
+    font-family: var(--ff-body);
+    color: var(--clr-primary-400);
+    scrollbar-width: none;
 }
 
 header {
-    background: salmon;
+    background: mistyrose;
+    padding-top: var(--size-100);
 }
 
 .header-wrapper {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    /* flex-direction: row; */
     justify-content: space-between;
-    
+    /* align-items: center; */
+    /* padding-top: var(--size-700); */
 }
 
 .header-link {
-    margin: .8rem;
+    margin: 0.8rem;
     color: #5d6b6d;
     text-decoration: none;
-
+    display: flex;
+    /* gap: clamp(var(--size-400), 5vw, var(--size-700)); */
+    font-weight: var(--fw-semi-bold);
 }
 
 .header-link:hover {
     color: black;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-decoration: none;
 }
+
+p:not([class]) {
+    opacity: 0.7;
+    max-width: 90ch;
+    text-decoration: none;
+}
+
+p[data-width="wide"] {
+    max-width: 50ch;
+    text-decoration: none;
+}
+
+p:hover {
+    text-decoration: none;
+}
+
+.nav-bar {
+    display: flex;
+    width: 160%;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5vh 4vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav-bar a:active {
+    transform: translateY(2px);
+}
+
+#greeting-user {
+    font-size: 2rem;
+    text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.9),
+        1px 1px 0px rgba(205, 165, 165, 0.9);
+    /* color: mistyrose; */
+    opacity: 0.9;
+}
+
 .container {
     position: relative;
     max-width: 168rem;
@@ -43,20 +205,43 @@ header {
 }
 
 .logo {
-    font-family: "Satisfy", cursive;
+    font-family: "Dancing Script", cursive;
     font-size: 7rem;
     margin: 0;
     color: #331200;
 }
 
+.my-bio {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit {
+    width: max-content;
+    margin-left: 1rem;
+    opacity: 0.2;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.update-btn {
+    width: max-content;
+    margin-top: 1rem;
+}
+
 button {
-    border: .2rem solid transparent;
-    background-color: rgb(218, 223, 225);
-    border-radius: .2rem;
+    display: inline-flex;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.15;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border: 0.2rem solid transparent;
+    border-radius: 0.2rem;
 }
 
 button:hover {
-    border: .2rem solid rgb(108, 122, 137, 0.8);
+    border: 0.2rem solid rgb(108, 122, 137, 0.8);
 }
 
 .modal-wrapper {
@@ -72,7 +257,7 @@ button:hover {
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,21 +266,42 @@ button:hover {
     max-width: 70%;
     margin: 42px auto;
     text-align: center;
+    background: mistyrose;
 }
 .form {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 40rem;
     margin: 0 auto;
+    color: black;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    text-align: center;
 }
 label {
     display: block;
 }
 input {
-    display: block;
     width: 100%;
-    padding: 4px;
-    font-size: 16px;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    font-size: 13px;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.1),
+        0 1px 1px rgba(255, 255, 255, 0.1);
+    -webkit-transition: box-shadow 0.5s ease;
+    -moz-transition: box-shadow 0.5s ease;
+    -o-transition: box-shadow 0.5s ease;
+    -ms-transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease;
+}
+input:hover {
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 1),
+        0 1px 1px rgba(255, 255, 255, 1);
 }
 
 .form-field {
@@ -120,9 +326,8 @@ img {
 .profile-pic {
     width: 30rem;
     height: 30rem;
-
     padding: 1rem;
-    background-color: rgba(218, 223, 225, 0.8);
+    background-color: mistyrose;
     border: none;
     border-radius: 50%;
 }
@@ -138,21 +343,23 @@ header .profile-pic {
 } */
 
 textarea {
-  width: 60%;
-  height: 150px;
-  padding: 8px 16px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  resize: none;
+    width: 55em;
+    height: 10em;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 1.6rem;
+    resize: none;
 }
 
 .profile {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    gap: 24px;
+    align-items: center;
+    gap: 2.4rem;
     margin-bottom: 48px;
 }
 input[type="file"] {
@@ -161,35 +368,40 @@ input[type="file"] {
 
 input::file-selector-button {
     font-family: "Ibarra Real Nova", serif;
-    font-size: 16px;
+    font-size: 1.6rem;
     color: #314e52;
     display: inline-block;
     background: white;
     border: 1px solid black;
     border-radius: 5%;
-    margin: 20px 0;
+    margin: 2rem 0;
 }
 .find-people {
     display: flex;
     justify-content: space-between;
-    gap: 60px;
+    gap: 6rem;
 }
 .recent-users {
-    max-width: 400px;
-    padding: 16px;
-    border: 3px solid rgba(218, 223, 225, 0.8);
-    border-radius: 4px;
-    background-color: #f7fcfb;
+    max-width: 60rem;
+    padding: 1.6rem;
+    border: 3px solid rgba(0, 0, 0, 0.613);
+    box-shadow: 0.5rem 1rem #00000069;
+    border-radius: 0.4rem;
+    background-color: Mistyrose;
 }
 .users-list-item {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 24px;
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+    text-decoration: none;
 }
+
+.users-list-item:hover {
+    text-decoration: underline;
+}
+
 .users-list img {
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
 }
 
 .users-list a {
@@ -205,8 +417,8 @@ input::file-selector-button {
     flex: 1;
 }
 .search-users input {
-    max-width: 600px;
-    margin-bottom: 24px;
+    max-width: 60rem;
+    margin-bottom: 2rem;
 }
 
 .search-pic {
@@ -214,85 +426,116 @@ input::file-selector-button {
 }
 
 .user-info {
-    margin: 20px;
+    opacity: 0.7;
+    max-width: 90ch;
+    margin: 2rem;
+}
+
+.user-info[data-width="wide"] {
+    max-width: 50ch;
+    text-decoration: none;
 }
 
 .friend-button {
     display: block;
-    padding: 10px;
-    margin: 20px auto;
-    background-color: #e1f1ef;
+    padding: 1rem;
+    margin: 2rem auto;
+    /* background-color: #e1f1ef; */
 }
 
 .friendship-requests {
-    background-color: #e1f1ef;
-    margin: 20 0;
+    background-color: mistyrose;
+    margin: 10 0;
+    text-decoration: none;
+    border: 3px solid rgba(0, 0, 0, 0.613);
+    box-shadow: 0.5rem 1rem #00000069;
 }
 
 .friendship-requests img {
-    width: 100px;
-    height: 100px;
-    border-radius: 4px;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 4.4rem;
     background: none;
-    margin: 5px 15px;
+    margin: 0.5rem 1.5rem;
 }
 
 .friendship-request-item {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .friendship-request-item a {
     display: flex;
     align-items: center;
+    text-align: -webkit-center;
+    text-decoration: none;
 }
 
 .friendship-requests .friend-button {
-    margin: 20px 20px;
+    margin: 2rem 2rem;
     display: inline-block;
     background-color: ghostwhite;
 }
 
-/* --------------------------------------------friends page */
+/* friends page */
 
 .friends-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: #e1f1ef;
-    gap: 20px;
-    padding: 40px;
-    margin-bottom: 24px;
+    text-align: -webkit-center;
+    background-color: mistyrose;
+    border: 3px solid rgba(0, 0, 0, 0.613);
+    box-shadow: 0.5rem 0.5rem #00000069;
+    gap: 2rem;
+    padding: 4rem;
+    margin-bottom: 2.4rem;
 }
 
 .friends-wrapper img {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
 }
 
-/* --------------------------------------------------------chat */
+/* chat */
 
-.chat h1 {
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-color: #331200;
-    max-width: 50rem;
-    margin: auto;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+.chat h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+    opacity: 0.4;
+    text-transform: uppercase;
+    animation: move-right 2s linear infinite alternate;
 }
+
+@keyframes move-right {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: -35px;
+    }
+}
+
 .chat-pic {
     width: 10rem;
     height: 10rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     margin-right: 2rem;
 }
 .chat-wrapper {
     max-width: 100rem;
+    max-height: 100%;
     margin: auto;
     background-color: rgb(189, 155, 152);
-    border-radius: .8rem;
+    border-radius: 0.8rem;
+    border: 3px solid rgba(0, 0, 0, 0.613);
+    box-shadow: 0.5rem 1rem #00000069;
 }
 
 .chat-item {
@@ -314,17 +557,21 @@ input::file-selector-button {
 }
 .chat textarea {
     width: 94rem;
-    border: none;
-    resize: vertical;
+    height: 14rem;
 }
 
 .chat-comment {
     display: flex;
+    height: 10rem;
 }
-.chat-comment button {
-    width: 6rem;
+.chat-post {
+    width: 7.5rem;
+    padding: 7rem 2rem;
+    border: 1px solid slategray;
 }
 .chat-history {
     max-height: 66vh;
-    overflow-y: scroll;
+    overflow-y: auto;
+    background-color: mistyrose;
+    scrollbar-width: var(--clr-accent-300);
 }

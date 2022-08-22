@@ -33,7 +33,7 @@ const Login = () => {
 
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <h3>Come have fun with us!</h3>
+            <h3>Log in below!</h3>
             {error && <p className="form-error">{error}</p>}
             {/* msg from our reset page which redirected us here after successful code input */}
             {msg === "reset-success" && (
@@ -61,10 +61,10 @@ const Login = () => {
                 <input type="submit" value="Login"></input>
             </div>
             <p>
-                Not a member just yet? <Link to="/">Sign up!</Link>
+                Not a member? <Link to="/">Sign up!</Link>
             </p>
             <p>
-                Forgotten your password?{" "}
+                Forgotten your password? Child....{" "}
                 <Link to="/reset-password">Reset Password</Link>
             </p>
         </form>

@@ -31,9 +31,9 @@ export default function () {
     return (
         <div className="my-bio">
             <h3>
-                My Bio{" "}
+                Snatch the attention with a few words about yourself: {" "}
                 <button
-                    name="edit"
+                    className="edit"
                     onClick={() => {
                         setEditState(true);
                     }}
@@ -46,10 +46,11 @@ export default function () {
             {editState && (
                 <>
                     <textarea
+                        id="textarea"
                         value={bioState}
                         onChange={(e) => setBioState(e.target.value)}
                     ></textarea>
-                    <button onClick={saveBio}>
+                    <button onClick={saveBio} className="update-btn">
                         {/* if there is an existing bio  the button shows "update", otherwise "add bio" */}
                         {user.bio ? "Update" : "Add Bio"}
                     </button>
