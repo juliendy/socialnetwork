@@ -3,11 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { ReduxStore } from "../redux/reducers";
 import { updateBioHelper } from "../redux/user";
 
-// interface BioEditorProps {
-//     user: User;
-//     onUpdateBio: (bio: string) => void;
-// }
-
 export default function () {
     const dispatch = useDispatch();
     const user = useSelector((state: ReduxStore) => {

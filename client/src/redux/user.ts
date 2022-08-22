@@ -15,7 +15,7 @@ interface UpdateProfilePicAction {
     };
 }
 
-//  there will be several UserActions in our reducer; update Bio is gonna be one of them; only actions assigned here maybe used in the reducer
+//  there will be several UserActions in our reducer; update Bio is gonna be one of them; only actions assigned here may be used in the reducer
 type UserAction = UpdateBioAction | UpdateProfilePicAction;
 
 export default function userReducer(
