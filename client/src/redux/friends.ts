@@ -9,7 +9,7 @@ interface GetFriendsAction {
 
 type FriendsAction = GetFriendsAction;
 // the array will consist of the same key:value pairs as our User type AND it will be an empty array intitially;
-// typescript: function signature , i.e. the :type after the parentheses, defines what's being returned
+// typescript: function signature , i.e. the :type after the parentheses, defines what's being returned !important
 export default function friendsReducer(
     friends: User[] = [],
     action: FriendsAction
